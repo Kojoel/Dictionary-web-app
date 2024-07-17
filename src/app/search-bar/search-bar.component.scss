@@ -36,13 +36,21 @@
     width: 100%;
     height: 64px;
     padding: 20px;
-    color: black;
+    color: var(--dark-01);
     font-family: "Inter", sans-serif;
     background: var(--grey-07);
     border: none;
+    outline: none;
     border-radius: 16px;
     font-size: 20px;
     font-weight: 700;
+}
+.search-section input:active{
+    outline: 1px solid var(--purple-09);
+}
+
+.search-section [placeholder]{
+    color: var(--grey-05);
 }
 
 .search-section .search-icon {
