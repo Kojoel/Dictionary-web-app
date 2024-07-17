@@ -12,17 +12,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap');
 // font-family: "Inconsolata", monospace;
 
+// UI Colours
 :root {
     --dark-01 : #050505;
     --dark-02 : #1F1F1F;
     --dark-03 : #2D2D2D;
-    --dark-03 : #3A3A3A;
+    --dark-04 : #3A3A3A;
 
-    --grey-04 : #757575;
-    --grey-05 : #E9E9E9;
-    --grey-06 : #F4F4F4;
+    --grey-05 : #757575;
+    --grey-06 : #E9E9E9;
+    --grey-07 : #F4F4F4;
 
-    --white-07 :#FFFFFF;
-    --purple-08 : #A445ED;
-    --red-09 : #FF5252;
+    --white-08 :#FFFFFF;
+    --purple-09 : #A445ED;
+    --red-10 : #FF5252;
+    --stroke : #979797;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    width: 100vw;
+    height: 100vh;
 }
