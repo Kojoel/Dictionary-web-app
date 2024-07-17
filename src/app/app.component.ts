@@ -3,11 +3,12 @@ import { RouterOutlet } from '@angular/router';
 import { StatusBarComponent } from './status-bar/status-bar.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { WordGenComponent } from './word-gen/word-gen.component';
+import { WordMeaningComponent } from './word-meaning/word-meaning.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, StatusBarComponent, SearchBarComponent, WordGenComponent],
+  imports: [RouterOutlet, StatusBarComponent, SearchBarComponent, WordGenComponent, WordMeaningComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
