@@ -28,7 +28,7 @@
 }
 
 .top{
-    width: 736.99px;
+    width: 100%;
     height: 36.5px;
     margin: 52px 0 52px 0;
     display: flex;
@@ -61,7 +61,7 @@
     font-weight: 700;
     font-size: 18px;
     color: var(--dark-03);
-    padding-right: 2rem; /* Adjust padding to make space for the arrow */
+    padding-right: 2rem; 
 }
 
 .top .right-corner::after {

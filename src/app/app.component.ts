@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { StatusBarComponent } from './status-bar/status-bar.component';
+import { SearchBarComponent } from './search-bar/search-bar.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, StatusBarComponent],
+  imports: [RouterOutlet, StatusBarComponent, SearchBarComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
