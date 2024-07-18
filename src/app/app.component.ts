@@ -14,4 +14,5 @@ import { WordMeaningComponent } from './word-meaning/word-meaning.component';
 })
 export class AppComponent {
   title = 'Dictionary-web-app';
+
 }
