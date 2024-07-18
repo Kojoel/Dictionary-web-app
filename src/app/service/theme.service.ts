@@ -4,8 +4,10 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class ThemeService {
-
+  isDark = false;
   constructor() { }
 
-  
+  toggleDarkMode() {
+    this.isDark = !this.isDark;
+  }
 }

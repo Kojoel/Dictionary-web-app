@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { ThemeService } from '../service/theme.service';
 
 @Component({
   selector: 'app-status-bar',
@@ -8,5 +9,7 @@ import { Component } from '@angular/core';
   styleUrl: './status-bar.component.scss'
 })
 export class StatusBarComponent {
+  darkmode = inject(ThemeService);
 
+  
 }

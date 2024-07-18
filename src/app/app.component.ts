@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { StatusBarComponent } from './status-bar/status-bar.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { WordGenComponent } from './word-gen/word-gen.component';
 import { WordMeaningComponent } from './word-meaning/word-meaning.component';
+import { ThemeService } from './service/theme.service';
 
 @Component({
   selector: 'app-root',
@@ -14,5 +15,7 @@ import { WordMeaningComponent } from './word-meaning/word-meaning.component';
 })
 export class AppComponent {
   title = 'Dictionary-web-app';
+  darkmode = inject(ThemeService);
 
+  
 }
