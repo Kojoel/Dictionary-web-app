@@ -1,10 +1,10 @@
 <div class="top">
     <svg class="book-icon" xmlns="http://www.w3.org/2000/svg" width="34" height="38" viewBox="0 0 34 38"><g fill="none" fill-rule="evenodd" stroke="#838383" stroke-linecap="round" stroke-width="1.5"><path d="M1 33V5a4 4 0 0 1 4-4h26.8A1.2 1.2 0 0 1 33 2.2v26.228M5 29h28M5 37h28"/><path stroke-linejoin="round" d="M5 37a4 4 0 1 1 0-8"/><path d="M11 9h12"/></g></svg>
     <div class="right-corner">
-        <select name="change-font" id="change-font" [class]="darkmode.isDark? 'selectdarkmode': 'selectlightmode'">
-            <option value="Mono" [class]="darkmode.isDark? 'selectdarkmode': ''">Mono</option>
-            <option value="Serif" [class]="darkmode.isDark? 'selectdarkmode': ''">Serif</option>
-            <option value="Sans Serif" [class]="darkmode.isDark? 'selectdarkmode':''">Sans Serif</option>
+        <select (change)="changeValue($event)" name="change-font" id="change-font" [class]="{'selectdarkmode': darkmode.isDark, 'selectlightmode': !darkmode.isDark}" >
+            <option value="'Inconsolata', monospace" [class]="darkmode.isDark? 'selectdarkmode': ''">Mono</option>
+            <option value="'Lora', serif" [class]="darkmode.isDark? 'selectdarkmode': ''">Serif</option>
+            <option value="'Inter', sans-serif" [class]="darkmode.isDark? 'selectdarkmode':''">Sans Serif</option>
         </select>
         <div class="hr"></div>
         <div class="toggleMode" (click)="darkmode.toggleDarkMode()" [class]="darkmode.isDark? 'togglebtndarkmode': 'togglebtnlightmode' "></div>

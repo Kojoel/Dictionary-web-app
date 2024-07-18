@@ -37,7 +37,7 @@
 
 .grammar-type p {
     font-size: 24px;
-    font-family: "Inter", sans-serif;
+    // font-family: "Inter", sans-serif;
     font-style: Italic;
     font-weight: 800;
 }
@@ -62,13 +62,13 @@
 }
 
 .meaning p {
-    font-family: "Inter", sans-serif;
+    // font-family: "Inter", sans-serif;
     font-size: 20px;
     margin-bottom: 1rem;
 }
 
 .meaning ul {
-    font-family: "Inter", sans-serif;
+    // font-family: "Inter", sans-serif;
     font-size: 16px;
     margin: 0 0 0 8%;
     // color: var(--grey-05);
@@ -100,7 +100,7 @@
 .syn {
     display: flex;
     gap: 15px;
-    font-family: "inter", sans-serif;
+    // font-family: "inter", sans-serif;
     font-size: 20px;
     margin-bottom: 2rem;
 }
