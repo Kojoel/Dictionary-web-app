@@ -40,7 +40,12 @@
     font-family: "Inter", sans-serif;
     font-style: Italic;
     font-weight: 800;
+}
+.gramlightmode {
     color: var(--dark-03);
+}
+.gramdarkmode {
+    color: var(--grey-05);
 }
 
 .grammar-type .hr {
@@ -59,7 +64,6 @@
 .meaning p {
     font-family: "Inter", sans-serif;
     font-size: 20px;
-    color: var(--grey-05);
     margin-bottom: 1rem;
 }
 
@@ -67,14 +71,23 @@
     font-family: "Inter", sans-serif;
     font-size: 16px;
     margin: 0 0 0 8%;
+    // color: var(--grey-05);
 }
 
 .meaning ul li {
     margin-bottom: .5rem;
     list-style: none;
     position: relative;
+    
+}
+.meaninglightmode {
     color: var(--dark-03);
 }
+.meaningdarkmode {
+    color: var(--white-08);
+}
+
+
 .meaning ul li::before {
     content: "\25CF";
     width: 7px;

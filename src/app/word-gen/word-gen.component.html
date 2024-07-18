@@ -1,7 +1,7 @@
 <div class="word-section">
     <div class="word">
-        <p>keyboard</p>
+        <p [class]="darkmode.isDark? 'worddarkmode' : 'wordlightmode'">keyboard</p>
         <p>/'ki:bo:d/</p>
     </div>
-    <div class="play-button"></div>
+    <div class="play-button" [class]="darkmode.isDark ? 'playdarkmode' : 'playlightmode' "></div>
 </div>

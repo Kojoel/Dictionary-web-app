@@ -44,19 +44,28 @@
         font-size: 64px;
         font-weight: 700;
         font-family: "Inter", sans-serif;
+        transition: .2s;
     }
     p:last-child {
         font-size: 24px;
         font-family: "Inter", sans-serif;
         font-weight: 400;
-        color: purple;
+        color: var(--purple-09);
+        transition: .2s;
     }
+}
+
+.wordlightmode{
+    color: var(--dark-03);
+}
+
+.worddarkmode{
+        color: var(--white-08);
 }
 
 .word-section .play-button {
     width: 75px;
     height: 75px;
-    background: #e7cffa;
     border-radius: 50%;
     position: relative;
     z-index: 0;
@@ -70,7 +79,7 @@
     font-size: 35px;
     transform: translate(-45%, -53%);
     z-index: 1;
-    color: var(--purple-09);
+    
 }
 
 .word-section .play-button:hover {
@@ -79,4 +88,20 @@
 }
 .word-section .play-button:active {
     scale: .9;
+}
+
+.playlightmode {
+    background: #E8D1FB;
+}
+
+.playlightmode::after {
+    color: var(--purple-09);
+}
+
+.playdarkmode {
+    background: #2D153F;
+}
+
+.playdarkmode::after {
+    color: var(--purple-09);
 }

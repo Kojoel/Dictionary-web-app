@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { ThemeService } from '../service/theme.service';
 
 @Component({
   selector: 'app-word-meaning',
@@ -8,5 +9,5 @@ import { Component } from '@angular/core';
   styleUrl: './word-meaning.component.scss'
 })
 export class WordMeaningComponent {
-
+  darkmode = inject(ThemeService);
 }
