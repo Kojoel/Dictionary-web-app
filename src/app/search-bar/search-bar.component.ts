@@ -14,4 +14,10 @@ export class SearchBarComponent {
   darkmode = inject(ThemeService);
   font = inject(FontService);
 
+  value = 'lakjsdf';
+
+  getValue() {
+    console.log(this.value);
+    this.value = '';
+  }
 }
