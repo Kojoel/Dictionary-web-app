@@ -17,17 +17,30 @@ export class SearchBarComponent {
   darkmode = inject(ThemeService);
   font = inject(FontService);
   data = inject(DataService);
-  value = 'lakjsdf';
+  inputErrBool = false;
+  value = '';
   
   private apiUrl = 'https://api.dictionaryapi.dev/api/v2/entries/en/'; 
 
   constructor(private http: HttpClient) { }
 
   fetchData() {
-     this.http.get(this.apiUrl + this.value).subscribe((response) => {
-      this.data.returnedData = response;
-      console.log(this.data.returnedData);
-     });
+    if (this.value.length) {
+      this.inputErrBool = false;
+      this.http.get(this.apiUrl + this.value).subscribe((response) => {
+        this.data.returnedData = response;
+        this.data.returnedData.forEach((item:any) => {
+          item.phonetics = item.phonetics.filter((phonetic:any) => phonetic.audio !== "");
+      });
+        console.log(this.data.returnedData);
+       });
+    }
+    else{
+      this.inputErrBool = true;
+      setTimeout(() => {
+        this.inputErrBool = false;
+      }, 10000);
+    }
   }
 
   // getValue() {

@@ -108,7 +108,35 @@
 .syn p:first-child{
     color: var(--grey-05);
 }
-.syn p:last-child{
+.syn span{
     color: var(--purple-09);
     font-weight: 750;
+}
+
+.word-section{
+    display: flex;
+    justify-content: space-between;
+}
+
+.play-not-hover circle,
+.play-not-hover path {
+    transition: fill 0.3s;
+    cursor: pointer;
+}
+
+.play-not-hover:hover circle {
+    opacity: 1; 
+}
+.word p:first-child{
+    font-size: 34px;
+    line-height: 72px;
+    font-weight: 700;
+}
+.word p:nth-child(2){
+    font-size: 1.5rem;
+    line-height: 29px;
+    color: var(--purple-09);
+}
+.play-not-hover:hover path {
+    fill: white; 
 }

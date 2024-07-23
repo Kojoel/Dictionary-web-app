@@ -1,16 +1,39 @@
-<div class="grammar-type">
-    <p [class]="darkmode.isDark ? 'meaningdarkmode' : 'meaninglightmode' ">noun</p>
-    <div class="hr"></div>
-</div>
-<div class="meaning">
-    <p [class]="darkmode.isDark ? 'gramdarkmode' : 'gramlightmode' ">Meaning</p>
-    <ul [class]="darkmode.isDark ? 'meaningdarkmode' : 'meaninglightmode' ">
-        <li>(etc.) A set of keys used to operate a typewrite, computer etc.</li>
-        <li>A component of many instruments including the piano, organ, and harpsichord consisting of usually black and white keys that cause different tones to be produced when struck.</li>
-        <li>A device with keys of a musical keyboard, used to control electronic sound-producing devices which may be built into or separate from the keyboard device.</li>
-    </ul>
-</div>
-<div class="syn">
-    <p [class]="darkmode.isDark ? 'meaningdarkmode' : 'meaninglightmode' ">Synonyms</p>
-    <p class="synonyms">electronic keyboard</p>
-</div>
+
+@for(res of dataService.returnedData; track res){
+    <div class="word-section">
+        <div class="word">
+            <p [class]="darkmode.isDark? 'worddarkmode' : 'wordlightmode'">{{res.word}}</p>
+            <p>{{res.phonetic}}</p>
+        </div>
+        <div (click)="audio.play()" class="play-button" [class]="darkmode.isDark ? 'playdarkmode' : 'playlightmode' ">
+            <svg class="play-not-hover" width="75" height="75" viewBox="0 0 75 75" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle opacity="0.25" cx="37.5" cy="37.5" r="37.5" fill="#A445ED"/>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M29 27V48L50 37.5L29 27Z" fill="#A445ED"/>
+            </svg>  
+        </div>
+        <audio #audio [src]="res.phonetics[0]?.audio||''"></audio>
+    </div>
+@for(meaning of res.meanings; track meaning){
+    <div class="grammar-type">
+        <p [class]="darkmode.isDark ? 'meaningdarkmode' : 'meaninglightmode' ">{{meaning.partOfSpeech}}</p>
+        <div class="hr"></div>
+    </div>
+    <div class="meaning">
+        <p [class]="darkmode.isDark ? 'gramdarkmode' : 'gramlightmode' ">Meaning</p>
+        <ul [class]="darkmode.isDark ? 'meaningdarkmode' : 'meaninglightmode' ">
+            @for(definition of meaning.definitions; track definition){
+                <li>{{definition.definition}}</li>
+            }
+        </ul>
+    </div>
+    <div class="syn">
+        <p [class]="darkmode.isDark ? 'meaningdarkmode' : 'meaninglightmode' ">Synonyms</p>
+        @for(synonym of meaning.synonyms;track synonym){
+            <span class="synonyms">{{synonym}}</span>
+        }
+    </div>
+}
+<p>
+    <small>Source: {{res.sourceUrls}}</small>
+</p>
+}
