@@ -9,7 +9,7 @@
 }
 @else {
     @for(res of dataService.returnedData; track res){
-        <div [class]="darkmode.isDark? 'worddarkmode' : 'wordlightmode'">{{res.word}}" class="word-section">
+        <div [class]="darkmode.isDark? 'worddarkmode' : 'wordlightmode'" class="word-section">
             <div class="word">
                 <p [class]="darkmode.isDark? 'worddarkmode' : 'wordlightmode'">{{res.word}}</p>
                 <p>{{res.phonetic}}</p>
