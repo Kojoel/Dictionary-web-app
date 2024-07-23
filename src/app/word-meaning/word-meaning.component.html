@@ -1,39 +1,49 @@
 
-@for(res of dataService.returnedData; track res){
-    <div class="word-section">
-        <div class="word">
-            <p [class]="darkmode.isDark? 'worddarkmode' : 'wordlightmode'">{{res.word}}</p>
-            <p>{{res.phonetic}}</p>
-        </div>
-        <div (click)="audio.play()" class="play-button" [class]="darkmode.isDark ? 'playdarkmode' : 'playlightmode' ">
-            <svg class="play-not-hover" width="75" height="75" viewBox="0 0 75 75" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle opacity="0.25" cx="37.5" cy="37.5" r="37.5" fill="#A445ED"/>
-                <path fill-rule="evenodd" clip-rule="evenodd" d="M29 27V48L50 37.5L29 27Z" fill="#A445ED"/>
-            </svg>  
-        </div>
-        <audio #audio [src]="res.phonetics[0]?.audio||''"></audio>
-    </div>
-@for(meaning of res.meanings; track meaning){
-    <div class="grammar-type">
-        <p [class]="darkmode.isDark ? 'meaningdarkmode' : 'meaninglightmode' ">{{meaning.partOfSpeech}}</p>
-        <div class="hr"></div>
-    </div>
-    <div class="meaning">
-        <p [class]="darkmode.isDark ? 'gramdarkmode' : 'gramlightmode' ">Meaning</p>
-        <ul [class]="darkmode.isDark ? 'meaningdarkmode' : 'meaninglightmode' ">
-            @for(definition of meaning.definitions; track definition){
-                <li>{{definition.definition}}</li>
-            }
-        </ul>
-    </div>
-    <div class="syn">
-        <p [class]="darkmode.isDark ? 'meaningdarkmode' : 'meaninglightmode' ">Synonyms</p>
-        @for(synonym of meaning.synonyms;track synonym){
-            <span class="synonyms">{{synonym}}</span>
-        }
+@if (dataService.error) {
+    <div class="flex-it">
+        <div class="emoji">😕</div>
+        <span class="error-title">{{dataService.errorMsg.title}}</span>
+        <p>{{dataService.errorMsg.message}}</p>
+        <p>{{dataService.errorMsg.resolution}}</p>
     </div>
 }
-<p>
-    <small>Source: {{res.sourceUrls}}</small>
-</p>
+@else {
+    @for(res of dataService.returnedData; track res){
+        <div class="word-section">
+            <div class="word">
+                <p [class]="darkmode.isDark? 'worddarkmode' : 'wordlightmode'">{{res.word}}</p>
+                <p>{{res.phonetic}}</p>
+            </div>
+            <div (click)="audio.play()" class="play-button" [class]="darkmode.isDark ? 'playdarkmode' : 'playlightmode' ">
+                <svg class="play-not-hover" width="75" height="75" viewBox="0 0 75 75" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle opacity="0.25" cx="37.5" cy="37.5" r="37.5" fill="#A445ED"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M29 27V48L50 37.5L29 27Z" fill="#A445ED"/>
+                </svg>  
+            </div>
+            <audio #audio [src]="res.phonetics[0]?.audio||''"></audio>
+        </div>
+    @for(meaning of res.meanings; track meaning){
+        <div class="grammar-type">
+            <p [class]="darkmode.isDark ? 'meaningdarkmode' : 'meaninglightmode' ">{{meaning.partOfSpeech}}</p>
+            <div class="hr"></div>
+        </div>
+        <div class="meaning">
+            <p [class]="darkmode.isDark ? 'gramdarkmode' : 'gramlightmode' ">Meaning</p>
+            <ul [class]="darkmode.isDark ? 'meaningdarkmode' : 'meaninglightmode' ">
+                @for(definition of meaning.definitions; track definition){
+                    <li>{{definition.definition}}</li>
+                }
+            </ul>
+        </div>
+        <div class="syn">
+            <p [class]="darkmode.isDark ? 'meaningdarkmode' : 'meaninglightmode' ">Synonyms</p>
+            @for(synonym of meaning.synonyms;track synonym){
+                <span class="synonyms">{{synonym}}</span>
+            }
+        </div>
+    }
+    <p>
+        <small>Source: {{res.sourceUrls}}</small>
+    </p>
+    }
 }

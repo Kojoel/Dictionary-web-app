@@ -140,3 +140,16 @@
 .play-not-hover:hover path {
     fill: white; 
 }
+
+.flex-it{
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+}
+.error-title{
+    font-weight: bold;
+}
+.emoji{
+    font-size: 3rem;
+}

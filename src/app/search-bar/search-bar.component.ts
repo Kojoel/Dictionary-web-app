@@ -29,11 +29,17 @@ export class SearchBarComponent {
       this.inputErrBool = false;
       this.http.get(this.apiUrl + this.value).subscribe((response) => {
         this.data.returnedData = response;
+        this.data.error = false;
         this.data.returnedData.forEach((item:any) => {
           item.phonetics = item.phonetics.filter((phonetic:any) => phonetic.audio !== "");
       });
         console.log(this.data.returnedData);
-       });
+       },
+      err=>{
+        this.data.error = true;
+        this.data.errorMsg = err.error
+        console.log(this.data.errorMsg)
+      });
     }
     else{
       this.inputErrBool = true;

@@ -5,6 +5,8 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class DataService {
+  error = false;
+  errorMsg:any = ''
   returnedData: any=[
     {
         word: "keyboard",
