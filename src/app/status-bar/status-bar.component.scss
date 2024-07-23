@@ -36,7 +36,15 @@
     align-items: center;
     /* background: red; */
 }
-
+select :first-child{
+    font-family: 'Inconsolata', monospace;
+}
+select :nth-child(2){
+    font-family: 'Lora', serif;
+}
+select :nth-child(3){
+    font-family: 'Inter', sans-serif;
+}
 .top .book-icon{
     width: 32px;
     height: 36.5px;
